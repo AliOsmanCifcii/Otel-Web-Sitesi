@@ -25,12 +25,12 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public Room TGetById(int id)
         {
-          return  _roomDal.GetById(id);
+           return _roomDal.GetById(id);
         }
 
-        public List<Room> TGetList(Room t)
+        public List<Room> TGetList()
         {
-            return _roomDal.GetList(t);
+            return _roomDal.GetList();  
         }
 
         public void TInsert(Room t)

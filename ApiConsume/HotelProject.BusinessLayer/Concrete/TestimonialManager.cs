@@ -1,4 +1,5 @@
-﻿using HotelProject.DataAccessLayer.Abstract;
+﻿using HotelProject.BusinessLayer.Abstract;
+using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    public class TestimonialManager : ITestimonialDal
+    public class TestimonialManager : ITestimonialService
     {
         private readonly ITestimonialDal _testimonialDal;
 
@@ -18,27 +19,27 @@ namespace HotelProject.BusinessLayer.Concrete
             _testimonialDal = testimonialDal;
         }
 
-        public void Delete(Testimonial t)
+        public void TDelete(Testimonial t)
         {
             _testimonialDal.Delete(t);
         }
 
-        public Testimonial GetById(int id)
+        public Testimonial TGetById(int id)
         {
             return _testimonialDal.GetById(id);
         }
 
-        public List<Testimonial> GetList(Testimonial t)
+        public List<Testimonial> TGetList()
         {
-            return _testimonialDal.GetList(t);
+            return _testimonialDal.GetList();
         }
 
-        public void Insert(Testimonial t)
+        public void TInsert(Testimonial t)
         {
             _testimonialDal.Insert(t);
         }
 
-        public void Update(Testimonial t)
+        public void TUpdate(Testimonial t)
         {
             _testimonialDal.Update(t);
         }

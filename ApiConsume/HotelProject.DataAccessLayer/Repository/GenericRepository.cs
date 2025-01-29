@@ -29,9 +29,9 @@ namespace HotelProject.DataAccessLayer.Repository
             return _context.Set<T>().Find(id);
         }
 
-        public List<T> GetList(T t)
+        public List<T> GetList()
         {
-            return _context.Set().ToList();
+            return _context.Set<T>().ToList();
         }
 
         public void Insert(T t)
